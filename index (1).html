@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nguyễn Thị Thùy Dương — Marketing Portfolio 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800&family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --c1:#B0D1D8;--c2:#C3D3B7;--c3:#F4F3E1;--c4:#F7D0B1;--c5:#F9C5CA;
+  --deep:#1a3a5c;--ink:#1e293b;--muted:#64748b;--border:#e2e8f0;--white:#fff;
+  --max:1200px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Montserrat',sans-serif;color:var(--ink);background:var(--white);overflow-x:hidden;line-height:1.65}
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-thumb{background:var(--c1);border-radius:99px}
+.aw{font-family:'Caveat',cursive;font-weight:700}
+p{font-size:15px;line-height:1.7;color:#475569}
+
+/* NAV */
+#nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 28px}
+.nav-logo{font-family:'Caveat',cursive;font-size:20px;font-weight:700;color:var(--deep)}
+.nav-ul{display:flex;gap:4px;list-style:none;flex-wrap:wrap;justify-content:flex-end}
+.nav-ul a{font-size:11px;font-weight:600;letter-spacing:.06em;color:var(--muted);text-decoration:none;padding:4px 10px;border-radius:99px;transition:all .2s}
+.nav-ul a:hover,.nav-ul a.on{background:var(--c1);color:var(--deep)}
+
+/* WRAP */
+.w{max-width:var(--max);margin:0 auto;padding:0 24px}
+section{padding:96px 0}
+.ey{display:flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--deep);margin-bottom:10px}
+.ey::before{content:'';width:26px;height:2px;background:var(--deep);flex-shrink:0}
+h2{font-size:clamp(26px,3vw,36px);font-weight:700;color:var(--deep);line-height:1.2;margin-bottom:8px}
+
+/* FADE */
+.f{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.f.s{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+
+/* BTN */
+.btn{display:inline-flex;align-items:center;gap:7px;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;padding:11px 26px;border-radius:6px;text-decoration:none;transition:all .2s;border:none;cursor:pointer;letter-spacing:.03em}
+.b-pri{background:var(--deep);color:#fff}.b-pri:hover{background:#0f2a46;transform:translateY(-1px);box-shadow:0 6px 20px rgba(26,58,92,.3)}
+.b-out{background:transparent;color:var(--deep);border:2px solid var(--deep)}.b-out:hover{background:var(--deep);color:#fff}
+.b-soft{background:var(--c1);color:var(--deep)}.b-soft:hover{background:#9abec6}
+
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.t{font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:4px 11px;border-radius:99px}
+.tb{background:#dbeafe;color:#1e40af}.tg{background:#dcfce7;color:#166534}
+.tp{background:#fef3c7;color:#92400e}.tr{background:#fce7f3;color:#9d174d}
+
+/* PLACEHOLDER */
+.iph{background:var(--c3);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--muted);font-size:11px;letter-spacing:.1em;text-transform:uppercase;border-radius:8px;overflow:hidden}
+.iph svg{width:36px;height:36px;opacity:.3}
+
+/* ══ HERO ══ */
+#hero{min-height:100vh;padding:0;display:grid;grid-template-columns:1fr 1fr;background:var(--deep);padding-top:58px}
+.hl{padding:72px 48px 72px max(24px,calc((100vw - var(--max))/2));display:flex;flex-direction:column;justify-content:center}
+.hbadge{display:inline-flex;align-items:center;gap:8px;background:rgba(176,209,216,.12);border:1px solid rgba(176,209,216,.25);padding:5px 14px;border-radius:99px;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--c1);margin-bottom:24px;width:fit-content}
+.hbadge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--c4)}
+.hh1{font-size:clamp(30px,4vw,50px);font-weight:800;color:#fff;line-height:1.1;margin-bottom:2px}
+.hhw{font-family:'Caveat',cursive;font-size:clamp(34px,4.5vw,56px);font-weight:700;color:var(--c4);display:block;margin-bottom:18px;line-height:1}
+.hroles{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:20px}
+.hrole{font-size:11px;font-weight:600;letter-spacing:.07em;color:rgba(255,255,255,.6);padding:4px 12px;background:rgba(255,255,255,.07);border-radius:99px}
+.hdesc{font-size:15px;line-height:1.8;color:rgba(255,255,255,.62);margin-bottom:32px;font-weight:300;max-width:420px}
+.hcta{display:flex;gap:11px;flex-wrap:wrap;margin-bottom:44px}
+.hcontacts{display:flex;flex-direction:column;gap:6px}
+.hci{font-size:12px;color:rgba(255,255,255,.4);display:flex;gap:10px}
+.hci b{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.2);width:36px;flex-shrink:0;padding-top:1px}
+.hr{position:relative;overflow:hidden;background:#0f2a46;display:flex;align-items:flex-end}
+.hero-img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+.hstat{position:absolute;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(8px);padding:12px 17px;border-radius:10px}
+.hstat-n{font-size:23px;font-weight:800;color:#fff;line-height:1}
+.hstat-l{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-top:3px}
+.hs1{top:90px;right:24px}.hs2{bottom:90px;right:24px}
+
+/* ══ ABOUT ══ */
+#about{background:var(--c3)}
+.ag{display:grid;grid-template-columns:340px 1fr;gap:60px;align-items:center}
+.aiw{position:relative}
+.aimg{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;border-radius:8px}
+.aiph{width:100%;aspect-ratio:3/4;background:var(--c1);border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--deep)}
+.aiph svg{width:48px;height:48px;opacity:.3}.aiph p{font-size:10px;letter-spacing:.15em;text-transform:uppercase;opacity:.4}
+.acorner{position:absolute;top:-12px;left:-12px;width:76px;height:76px;border:3px solid var(--c4);border-radius:8px;z-index:-1}
+.atag{position:absolute;bottom:20px;right:-20px;background:var(--deep);color:#fff;padding:11px 17px;border-radius:8px;text-align:center;font-size:12px;font-weight:700;box-shadow:0 8px 24px rgba(26,58,92,.3)}
+.atag span{display:block;font-family:'Caveat',cursive;font-size:21px;color:var(--c4)}
+.ahw{font-family:'Caveat',cursive;font-size:36px;font-weight:700;color:var(--deep);display:block;margin-bottom:18px;line-height:1.1}
+.ab p{margin-bottom:15px}
+.aq{background:var(--deep);color:#fff;padding:18px 22px;border-radius:8px;margin-top:20px;font-family:'Caveat',cursive;font-size:18px;line-height:1.6}
+.acts{display:flex;gap:11px;margin-top:20px;flex-wrap:wrap}
+
+/* ══ EDUCATION ══ */
+#education{background:var(--white)}
+.eg{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:44px}
+.ec{background:var(--c3);border:1px solid var(--border);border-radius:12px;padding:32px;position:relative;overflow:hidden}
+.ec::before{content:'';position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,var(--deep),var(--c1))}
+.elbl{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--deep);margin-bottom:7px}
+.esch{font-size:19px;font-weight:700;color:var(--deep);margin-bottom:3px}
+.eyr{font-size:12px;color:var(--muted);margin-bottom:18px}
+.gpar{display:flex;align-items:baseline;gap:6px}
+.gpan{font-size:50px;font-weight:800;color:var(--deep);line-height:1}
+.gpas{font-size:13px;color:var(--muted);line-height:1.5}
+.elist{list-style:none;margin-top:14px;display:flex;flex-direction:column;gap:9px}
+.elist li{font-size:13px;line-height:1.65;color:#475569;padding-left:17px;position:relative}
+.elist li::before{content:'✦';position:absolute;left:0;color:var(--deep);font-size:9px;top:4px}
+
+/* ══ SKILLS ══ */
+#skills{background:var(--deep)}
+#skills .ey{color:var(--c4)}
+#skills .ey::before{background:var(--c4)}
+#skills h2{color:#fff}
+.sg{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
+.sc{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:26px}
+.sct{font-family:'Caveat',cursive;font-size:20px;font-weight:700;color:var(--c4);margin-bottom:18px}
+.srs{display:flex;flex-direction:column;gap:13px}
+.srt{display:flex;justify-content:space-between;margin-bottom:5px}
+.sn{font-size:13px;font-weight:600;color:rgba(255,255,255,.8)}
+.sp{font-size:11px;color:rgba(255,255,255,.35);font-weight:700}
+.sbb{height:3px;background:rgba(255,255,255,.08);border-radius:99px;overflow:hidden}
+.sbf{height:100%;background:var(--c1);border-radius:99px;transition:width 1.4s cubic-bezier(.4,0,.2,1)}
+.schips{display:flex;flex-wrap:wrap;gap:5px;margin-top:14px}
+.sch{font-size:10px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.1);padding:3px 10px;border-radius:99px}
+
+/* ══ EXPERIENCE ══ */
+#experience{background:var(--c3)}
+.etl{position:relative;margin-top:52px}
+.etl::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--deep),var(--c1))}
+.ei{padding-left:42px;padding-bottom:52px;position:relative}
+.ei:last-child{padding-bottom:0}
+.edot{position:absolute;left:-7px;top:6px;width:16px;height:16px;border-radius:50%;background:var(--deep);border:3px solid #fff;box-shadow:0 0 0 3px var(--deep)}
+.epr{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--deep);margin-bottom:4px}
+.eco{font-size:21px;font-weight:800;color:var(--deep);margin-bottom:2px}
+.ero{font-family:'Caveat',cursive;font-size:18px;color:#2d6a8e;margin-bottom:14px}
+.ecard{background:#fff;border:1px solid var(--border);border-radius:12px;padding:22px 26px}
+.ebul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.ebul li{font-size:14px;line-height:1.75;color:#475569;padding-left:19px;position:relative}
+.ebul li::before{content:'→';position:absolute;left:0;color:var(--deep);font-weight:700}
+.ehl{font-weight:700;color:var(--deep)}
+.egal{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:16px}
+.egi{aspect-ratio:4/3;border-radius:6px;overflow:hidden;background:var(--c1)}
+.egi img{width:100%;height:100%;object-fit:cover;display:block}
+.evgal{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:16px}
+.vt{aspect-ratio:9/16;border-radius:8px;background:var(--deep);overflow:hidden;position:relative;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px}
+.vt video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
+.vto{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:7px}
+.vpb{width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.14);border:2px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;transition:all .2s}
+.vpb:hover{background:var(--c1);border-color:var(--c1)}
+.vpb svg{color:#fff;width:20px;height:20px}
+.vvw{font-size:11px;font-weight:700;color:#fff;background:rgba(0,0,0,.5);padding:3px 10px;border-radius:99px}
+.epub{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--c4),var(--c5));padding:8px 15px;border-radius:8px;margin-top:13px;font-size:12px;font-weight:700;color:var(--deep)}
+.edoc{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:600;color:var(--deep);border:1px solid var(--deep);padding:6px 13px;border-radius:6px;text-decoration:none;margin-top:11px;transition:all .2s}
+.edoc:hover{background:var(--deep);color:#fff}
+.edoc svg{width:13px;height:13px}
+
+/* ══ PROJECTS ══ */
+#projects{background:#fff}
+.pg{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:52px}
+.pc{background:var(--c3);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:transform .25s,box-shadow .25s}
+.pc:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(26,58,92,.1)}
+.pth{width:100%;height:190px;overflow:hidden;background:var(--deep);position:relative}
+.pth img{width:100%;height:100%;object-fit:cover;display:block}
+.pthph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;color:rgba(255,255,255,.18)}
+.pthph svg{width:38px;height:38px}.pthph p{font-size:9px;letter-spacing:.16em;text-transform:uppercase}
+.pb{padding:22px 24px}
+.ppr{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--deep);margin-bottom:5px}
+.pnm{font-family:'Caveat',cursive;font-size:23px;font-weight:700;color:var(--deep);margin-bottom:3px;line-height:1.2}
+.pcl{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:11px}
+.pdesc{font-size:13px;line-height:1.75;color:#475569;margin-bottom:12px}
+.pmedia{display:grid;gap:7px;margin-top:12px}
+.pmedia.g2{grid-template-columns:1fr 1fr}.pmedia.g3{grid-template-columns:1fr 1fr 1fr}
+.pmi{border-radius:6px;overflow:hidden;background:var(--c1)}
+.pmi img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
+.pmi video{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
+
+/* ══ TVC FEATURED ══ */
+#tvc{background:var(--deep);padding:96px 0}
+#tvc .ey{color:var(--c4)}
+#tvc .ey::before{background:var(--c4)}
+#tvc h2{color:#fff}
+.tvcl{display:grid;grid-template-columns:1fr 340px;gap:44px;align-items:center;margin-top:44px}
+.tvvw{border-radius:14px;overflow:hidden;background:#000;box-shadow:0 24px 60px rgba(0,0,0,.4)}
+.tvvw video,.tvvw iframe{width:100%;display:block;aspect-ratio:16/9}
+.tvb{display:inline-flex;align-items:center;gap:8px;background:rgba(247,208,177,.14);border:1px solid rgba(247,208,177,.28);padding:7px 14px;border-radius:99px;margin-bottom:18px;font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--c4)}
+.tvt{font-family:'Caveat',cursive;font-size:30px;font-weight:700;color:#fff;line-height:1.3;margin-bottom:12px}
+.tvd{font-size:14px;line-height:1.8;color:rgba(255,255,255,.58);margin-bottom:18px}
+.tvmr{display:flex;gap:9px;font-size:13px;margin-bottom:8px}
+.tvml{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.28);width:68px;flex-shrink:0}
+.tvmv{color:rgba(255,255,255,.62)}
+
+/* ══ CASE STUDY ══ */
+#casestudy{background:var(--c3)}
+.csg{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:44px}
+.csc{background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden}
+.csh{background:var(--deep);padding:22px 26px}
+.csn{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--c1);margin-bottom:7px}
+.cst{font-size:17px;font-weight:700;color:#fff;line-height:1.4}
+.csb{padding:22px 26px}
+.cstx{font-size:13px;line-height:1.75;color:#475569}
+.csl{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:var(--deep);text-decoration:none;margin-top:13px;border-bottom:2px solid var(--c1);padding-bottom:2px}
+.csl:hover{color:#0f2a46}
+
+/* ══ RESEARCH ══ */
+#research{background:#fff}
+.resg{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:44px;align-items:start}
+.resimg img{width:100%;border-radius:8px;margin-bottom:10px;cursor:pointer}
+.resdoi{font-family:monospace;font-size:12px;color:var(--deep);background:var(--c1);padding:6px 13px;border-radius:6px;display:inline-block;margin-top:8px}
+
+/* ══ AWARDS ══ */
+#awards{background:var(--deep)}
+#awards .ey{color:var(--c4)}
+#awards .ey::before{background:var(--c4)}
+#awards h2{color:#fff}
+.awl{margin-top:44px;border-top:1px solid rgba(255,255,255,.1)}
+.awr{display:grid;grid-template-columns:60px 1fr auto;gap:22px;align-items:center;padding:18px 10px;border-bottom:1px solid rgba(255,255,255,.08);transition:background .2s;border-radius:8px}
+.awr:hover{background:rgba(255,255,255,.04)}
+.awm{font-size:30px;text-align:center;line-height:1}
+.awn{font-size:14px;font-weight:600;color:rgba(255,255,255,.85);line-height:1.5}
+.awo{display:block;font-size:12px;color:rgba(255,255,255,.4);margin-top:3px;font-weight:400}
+.awy{font-size:11px;font-weight:700;color:rgba(255,255,255,.28);white-space:nowrap}
+
+/* ══ CERTS ══ */
+#certs{background:var(--c3)}
+.ccg{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:44px}
+.cc{background:#fff;border:1px solid var(--border);border-radius:12px;padding:22px 26px;display:flex;gap:16px;align-items:flex-start;position:relative;overflow:hidden}
+.cc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--deep),var(--c1))}
+.cbw{width:54px;height:54px;flex-shrink:0;border-radius:10px;overflow:hidden;background:var(--c3);display:flex;align-items:center;justify-content:center}
+.cbw img{width:100%;height:100%;object-fit:contain}
+.cbph svg{width:26px;height:26px;color:var(--deep);opacity:.3}
+.ci{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--deep);margin-bottom:4px}
+.cn{font-size:15px;font-weight:700;color:var(--deep);margin-bottom:3px;line-height:1.3}
+.cyr{font-size:12px;color:var(--muted)}
+.toeic-c{background:var(--deep);border-color:transparent}.toeic-c::after{background:var(--c4)}
+.toeic-c .ci{color:var(--c4)}.toeic-c .cn{color:#fff}.toeic-c .cyr{color:rgba(255,255,255,.4)}
+.tscore{font-family:'Caveat',cursive;font-size:46px;font-weight:700;color:var(--c4);line-height:1;margin-top:4px}
+.cgal{display:grid;grid-template-columns:repeat(4,1fr);gap:11px;margin-top:28px}
+.cgali{border-radius:8px;overflow:hidden;background:var(--c1);cursor:pointer}
+.cgali img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;transition:transform .25s}
+.cgali:hover img{transform:scale(1.04)}
+.cgalp{display:flex;flex-direction:column;align-items:center;justify-content:center;aspect-ratio:3/4;background:var(--c3);border-radius:8px;border:1px dashed var(--border);cursor:pointer;font-size:11px;color:var(--deep);gap:6px;text-decoration:none;font-weight:600;font-family:'Montserrat',sans-serif}
+
+/* ══ EXTRA ══ */
+#extra{background:#fff}
+.extg{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:44px}
+.extc{background:var(--c3);border:1px solid var(--border);border-radius:12px;padding:26px;position:relative}
+.extc::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:linear-gradient(to bottom,var(--deep),var(--c1));border-radius:12px 0 0 12px}
+.exto{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--deep);margin-bottom:5px}
+.extr{font-size:18px;font-weight:700;color:var(--deep);margin-bottom:11px}
+.extgal{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:13px}
+.extgal img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;cursor:pointer}
+
+/* ══ CONTACT ══ */
+#contact{background:var(--deep);padding:96px 0}
+#contact .ey{color:var(--c4)}
+#contact .ey::before{background:var(--c4)}
+.ctg{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.ctbig{font-family:'Caveat',cursive;font-size:clamp(36px,4.5vw,56px);font-weight:700;color:#fff;line-height:1.25;margin-bottom:14px}
+.ctsub{font-size:15px;line-height:1.8;color:rgba(255,255,255,.58);margin-bottom:28px}
+.ctl{display:flex;flex-direction:column}
+.cti{display:flex;align-items:center;gap:16px;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+.cti:first-child{border-top:1px solid rgba(255,255,255,.1)}
+.cticon{width:38px;height:38px;border-radius:8px;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cticon svg{width:17px;height:17px;color:#fff}
+.ctlbl{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:2px}
+.ctval{font-size:14px;font-weight:600;color:#fff}
+
+footer{background:#0a1f38;padding:18px 28px;display:flex;align-items:center;justify-content:space-between}
+footer p{font-size:11px;color:rgba(255,255,255,.22)}
+.fbrand{font-family:'Caveat',cursive;font-size:17px;color:rgba(255,255,255,.38)}
+
+/* LIGHTBOX */
+#lb{position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.9);display:none;align-items:center;justify-content:center;padding:24px}
+#lb.on{display:flex}
+#lb img{max-width:90vw;max-height:90vh;border-radius:8px}
+#lbc{position:fixed;top:18px;right:26px;font-size:32px;color:#fff;cursor:pointer;background:none;border:none;font-family:inherit}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  #hero{grid-template-columns:1fr}
+  .hr{min-height:300px}.hs1,.hs2{display:none}
+  .ag,.eg,.sg,.pg,.csg,.resg,.extg,.ctg,.ccg{grid-template-columns:1fr}
+  .hl{padding:72px 24px}
+  section{padding:72px 0}
+  #tvc,#contact{padding:72px 0}
+  .tvcl{grid-template-columns:1fr}
+  .awr{grid-template-columns:48px 1fr}.awy{display:none}
+  .cgal{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+
+<div id="lb">
+  <button id="lbc" onclick="clb()">×</button>
+  <img id="lbi" src="" alt="">
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-logo">Thùy Dương ✦</div>
+  <ul class="nav-ul">
+    <li><a href="#about">About</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#tvc">TVC</a></li>
+    <li><a href="#casestudy">Case Study</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#awards">Awards</a></li>
+    <li><a href="#certs">Certs</a></li>
+    <li><a href="#extra">Hoạt động</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section id="hero">
+  <div class="hl">
+    <div class="hbadge">✦ Marketing Portfolio · 2026</div>
+    <h1 class="hh1">Nguyễn Thị Thùy Dương</h1>
+    <span class="hhw">Thùy Dương ✦</span>
+    <div class="hroles">
+      <span class="hrole">Marketing Student</span>
+      <span class="hrole">Content & SEO</span>
+      <span class="hrole">Storytelling</span>
+      <span class="hrole">Social Media</span>
+    </div>
+    <p class="hdesc">Sinh viên Digital Marketing với hơn 1,5 năm kinh nghiệm thực tế — hướng đến Marketing Executive với năng lực xây dựng chiến lược truyền thông tổng thể.</p>
+    <div class="hcta">
+      <a href="#projects" class="btn b-soft">View Projects</a>
+      <a href="#contact" class="btn b-out" style="color:#fff;border-color:rgba(255,255,255,.35)">Liên hệ ngay</a>
+      <a href="3.pdf" class="btn b-out" style="color:#fff;border-color:rgba(255,255,255,.2);font-size:12px" target="_blank">📄 Download CV</a>
+    </div>
+    <div class="hcontacts">
+      <div class="hci"><b>Tel</b>0934 751 211</div>
+      <div class="hci"><b>Mail</b>tduong12112004@gmail.com</div>
+      <div class="hci"><b>Loc</b>Hòa Vang, Đà Nẵng</div>
+    </div>
+  </div>
+  <div class="hr">
+    <img class="hero-img" src="1.jpg" alt="Thùy Dương" onerror="this.style.display='none';document.getElementById('hph').style.display='flex'">
+    <div id="hph" style="display:none;width:100%;height:100%;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:rgba(255,255,255,.15)">
+      <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+      <p style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;opacity:.35;text-align:center">1.jpg</p>
+    </div>
+    <div class="hstat hs1 f d4"><div class="hstat-n">3.23</div><div class="hstat-l">GPA / 4.0</div></div>
+    <div class="hstat hs2 f d4"><div class="hstat-n">1.5+</div><div class="hstat-l">Năm KN</div></div>
+  </div>
+</section>
+
+<!-- ══ ABOUT ══ -->
+<section id="about">
+  <div class="w">
+    <div class="ag">
+      <div class="aiw f">
+        <img class="aimg" src="2.jpg" alt="Thùy Dương" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="aiph" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg><p>2.jpg</p></div>
+        <div class="acorner"></div>
+        <div class="atag"><span>Giỏi</span>Xếp loại TN</div>
+      </div>
+      <div class="ab">
+        <div class="ey f d1">Giới thiệu</div>
+        <h2 class="f d1">Xin chào, mình là</h2>
+        <span class="ahw f d2">Thùy Dương 🌿</span>
+        <p class="f d3">Mình là sinh viên năm 4 ngành <strong>Digital Marketing</strong> tại Đại học Kinh tế, Đại học Đà Nẵng. Với GPA 3.23/4.0 và xếp loại Giỏi, mình tích lũy hơn <strong>1,5 năm kinh nghiệm thực tế</strong> tại các công ty đa dạng lĩnh vực.</p>
+        <p class="f d3">Mình có kinh nghiệm thực chiến trong Content Strategy, SEO On-page, Social Media Management và Email Marketing. Đặc biệt, mình được rèn tư duy phân tích qua nghiên cứu khoa học công bố quốc tế và các dự án thực tế có đo lường KPI rõ ràng.</p>
+        <div class="aq f d4">"Marketing tốt là sự kết hợp hoàn hảo giữa dữ liệu và cảm xúc — mình đang học cả hai mỗi ngày." ✨</div>
+        <div class="acts f d5">
+          <a href="3.pdf" class="btn b-pri" target="_blank">📄 Download CV</a>
+          <a href="#contact" class="btn b-out">Liên hệ mình</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ EDUCATION ══ -->
+<section id="education">
+  <div class="w">
+    <div class="ey f">Học vấn</div>
+    <h2 class="f d1">Hành trình <span class="aw" style="color:var(--deep)">học tập</span></h2>
+    <div class="eg">
+      <div class="ec f d2">
+        <div class="elbl">Digital Marketing</div>
+        <div class="esch">Đại học Kinh tế — ĐH Đà Nẵng</div>
+        <div class="eyr">2022 — 2026 (dự kiến tốt nghiệp)</div>
+        <div class="gpar"><span class="gpan">3.23</span><span class="gpas">/ 4.0 GPA<br>Xếp loại Giỏi</span></div>
+      </div>
+      <div class="ec f d3">
+        <div class="elbl">Nghiên cứu & Ngoại khóa</div>
+        <div class="esch">Thành tích nổi bật</div>
+        <ul class="elist" style="margin-top:14px">
+          <li>Nghiên cứu khoa học cấp Khoa Marketing — công bố tại Hội thảo Quốc tế MICA</li>
+          <li>Đăng trên Tạp chí Kinh tế và Kinh doanh Indonesia (JIEB)</li>
+          <li>Giải Nhì cuộc thi Thanh niên Sáng tạo, Chuyển đổi số 2023</li>
+          <li>Giải "Cánh Chim Sáng Tạo" 2024 — Đại học Đà Nẵng</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SKILLS ══ -->
+<section id="skills">
+  <div class="w">
+    <div class="ey f">Kỹ năng</div>
+    <h2 class="f d1">Chuyên môn & <span class="aw" style="color:var(--c1)">Công cụ</span></h2>
+    <div class="sg">
+      <div class="sc f d1">
+        <div class="sct">Content & Social ✍️</div>
+        <div class="srs">
+          <div><div class="srt"><span class="sn">Content Strategy</span><span class="sp">85%</span></div><div class="sbb"><div class="sbf" style="width:0" data-w="85%"></div></div></div>
+          <div><div class="srt"><span class="sn">Fanpage Management</span><span class="sp">90%</span></div><div class="sbb"><div class="sbf" style="width:0" data-w="90%"></div></div></div>
+          <div><div class="srt"><span class="sn">Email Marketing</span><span class="sp">75%</span></div><div class="sbb"><div class="sbf" style="width:0" data-w="75%"></div></div></div>
+          <div><div class="srt"><span class="sn">Shopee Operations</span><span class="sp">70%</span></div><div class="sbb"><div class="sbf" style="width:0" data-w="70%"></div></div></div>
+        </div>
+        <div class="schips"><span class="sch">Brevo</span><span class="sch">GetResponse</span><span class="sch">TikTok</span><span class="sch">Facebook</span></div>
+      </div>
+      <div class="sc f d2">
+        <div class="sct">SEO & Analytics 📊</div>
+        <div class="srs">
+          <div><div class="srt"><span class="sn">SEO On-page</span><span class="sp">85%</span></div><div class="sbb"><div class="sbf" style="width:0" data-w="85%"></div></div></div>
+          <div><div class="srt"><span class="sn">Keyword Research</span><span class="sp">80%</span></div><div class="sbb"><div class="sbf" style="width:0" data-w="80%"></div></div></div>
+          <div><div class="srt"><span class="sn">SPSS / Smart PLS</span><span class="sp">75%</span></div><div class="sbb"><div class="sbf" style="width:0" data-w="75%"></div></div></div>
+          <div><div class="srt"><span class="sn">Power BI</span><span class="sp">65%</span></div><div class="sbb"><div class="sbf" style="width:0" data-w="65%"></div></div></div>
+        </div>
+        <div class="schips"><span class="sch">Google Analytics</span><span class="sch">Power BI</span><span class="sch">SPSS</span></div>
+      </div>
+      <div class="sc f d3">
+        <div class="sct">Design & Creative 🎨</div>
+        <div class="srs">
+          <div><div class="srt"><span class="sn">Canva</span><span class="sp">92%</span></div><div class="sbb"><div class="sbf" style="width:0" data-w="92%"></div></div></div>
+          <div><div class="srt"><span class="sn">Photoshop</span><span class="sp">75%</span></div><div class="sbb"><div class="sbf" style="width:0" data-w="75%"></div></div></div>
+          <div><div class="srt"><span class="sn">Illustrator</span><span class="sp">68%</span></div><div class="sbb"><div class="sbf" style="width:0" data-w="68%"></div></div></div>
+          <div><div class="srt"><span class="sn">Video Edit (CapCut)</span><span class="sp">80%</span></div><div class="sbb"><div class="sbf" style="width:0" data-w="80%"></div></div></div>
+        </div>
+        <div class="schips"><span class="sch">Canva</span><span class="sch">Photoshop</span><span class="sch">CapCut</span><span class="sch">Photography</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ EXPERIENCE ══ -->
+<section id="experience">
+  <div class="w">
+    <div class="ey f">Kinh nghiệm</div>
+    <h2 class="f d1">Hành trình <span class="aw" style="color:var(--deep)">thực chiến</span></h2>
+    <div class="etl">
+
+      <!-- 5E DESIGN -->
+      <div class="ei f d1">
+        <div class="edot"></div>
+        <div class="epr">T12/2025 — T3/2026</div>
+        <div class="eco">5E Design</div>
+        <div class="ero">SEO Marketing Intern ✦</div>
+        <div class="ecard">
+          <ul class="ebul">
+            <li>Nghiên cứu và xây dựng bộ từ khóa <span class="ehl">60+ keyword</span> chính và phụ, tối ưu theo search intent từng nhóm khách hàng.</li>
+            <li>Triển khai 60+ bài SEO chuẩn On-page, giúp tăng <span class="ehl">25–30% organic traffic</span> sau 3 tháng.</li>
+            <li>Đưa <span class="ehl">5+ bài viết lên Top 5–10 Google</span> với các từ khóa mục tiêu.</li>
+            <li>Theo dõi số liệu, phân tích đối thủ, đề xuất chiến lược nội dung phù hợp từng giai đoạn.</li>
+          </ul>
+          <div class="egal">
+            <div class="egi"><img src="4.jfif" alt="" onerror="this.parentNode.style.background='var(--c1)'"></div>
+            <div class="egi"><img src="5.jfif" alt="" onerror="this.parentNode.style.background='var(--c1)'"></div>
+            <div class="egi"><img src="6.jfif" alt="" onerror="this.parentNode.style.background='var(--c1)'"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- YBOX -->
+      <div class="ei f d2">
+        <div class="edot"></div>
+        <div class="epr">T8/2024 — T4/2025</div>
+        <div class="eco">YBOX Việt Nam</div>
+        <div class="ero">Editor Executive → Vice Manager Trainee of KGG Team ✦</div>
+        <div class="ecard">
+          <ul class="ebul">
+            <li>Vận hành đồng thời <span class="ehl">4 fanpage</span>, quản lý lịch đăng <span class="ehl">40–50+ bài/tháng</span> trên website YBOX.</li>
+            <li>Quản lý <span class="ehl">3 team</span> (Kỹ năng, Gương mặt, Gia vị) — đã edit lại nội dung khoảng <span class="ehl">1.073 bài báo</span>.</li>
+            <li>Tối ưu hóa nội dung giúp tăng tương tác trung bình <span class="ehl">15–20%</span> so với giai đoạn trước.</li>
+            <li>Được thăng chức <span class="ehl">Vice Manager Trainee of KGG Team (Editorial Department)</span> từ 03/11/2024.</li>
+          </ul>
+          <div class="epub">🎉 Thăng chức Vice Manager Trainee — 03/11/2024</div>
+          <br>
+          <a href="7.pdf" class="edoc" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            Xem quyết định thăng chức (7.pdf)
+          </a>
+          <div class="egal" style="margin-top:14px">
+            <div class="egi"><img src="3.jfif" alt="" onerror="this.parentNode.style.background='var(--c1)'"></div>
+            <div class="egi"><img src="8.png" alt="1073 bài báo" onclick="olb('8.png')" style="cursor:pointer" onerror="this.parentNode.style.background='var(--c1)'"></div>
+            <div class="egi"><img src="9.png" alt="4 pages" onclick="olb('9.png')" style="cursor:pointer" onerror="this.parentNode.style.background='var(--c1)'"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- JUMBSHOTS -->
+      <div class="ei f d3">
+        <div class="edot"></div>
+        <div class="epr">T8/2024 — T1/2025</div>
+        <div class="eco">Jumbshots Basketball Center</div>
+        <div class="ero">Media Intern ✦</div>
+        <div class="ecard">
+          <ul class="ebul">
+            <li>Sản xuất và đăng tải nội dung hình ảnh/video đều đặn <span class="ehl">3–5 bài/tuần</span>, tăng độ nhận diện trung tâm.</li>
+            <li>Phối hợp tổ chức và truyền thông cho các hoạt động nội bộ và lớp học bóng rổ.</li>
+          </ul>
+          <div class="evgal">
+            <div class="vt">
+              <video src="10.mp4" muted loop playsinline preload="metadata"></video>
+              <div class="vto">
+                <div class="vpb"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <div class="vvw">1,5K lượt xem</div>
+                <a href="https://www.facebook.com/reel/869417298410960" target="_blank" style="font-size:10px;color:rgba(255,255,255,.5);text-align:center">Xem Facebook</a>
+              </div>
+            </div>
+            <div class="vt">
+              <video src="11.mp4" muted loop playsinline preload="metadata"></video>
+              <div class="vto">
+                <div class="vpb"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <div class="vvw">2,5K lượt xem</div>
+                <a href="https://www.facebook.com/reel/3992243410994299" target="_blank" style="font-size:10px;color:rgba(255,255,255,.5);text-align:center">Xem Facebook</a>
+              </div>
+            </div>
+            <div class="vt">
+              <video src="12.mp4" muted loop playsinline preload="metadata"></video>
+              <div class="vto">
+                <div class="vpb"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <div class="vvw">2,2K lượt xem</div>
+                <a href="https://www.facebook.com/reel/1210843420012675" target="_blank" style="font-size:10px;color:rgba(255,255,255,.5);text-align:center">Xem Facebook</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROJECTS ══ -->
+<section id="projects">
+  <div class="w">
+    <div class="ey f">Dự án</div>
+    <h2 class="f d1">Featured <span class="aw" style="color:var(--deep)">Projects</span></h2>
+    <div class="pg">
+
+      <!-- NOOM -->
+      <div class="pc f d1">
+        <div class="pth"><div class="pthph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M15 10l4.553-2.276A1 1 0 0121 8.723v6.554a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg><p>TVC 13.mp4</p></div></div>
+        <div class="pb">
+          <div class="ppr">T9/2025 — T11/2025</div>
+          <div class="pnm">TVC Dầu ép lạnh NOOM</div>
+          <div class="pcl">NOOM Foods · 🏆 Best of Marketing Mix</div>
+          <p class="pdesc">Phát triển ý tưởng & kịch bản TVC. Big Idea: <em>"Ngừa hơn chữa — Bảo vệ sức khỏe từ nguồn thực phẩm sạch."</em> Slogan: "Noom – Sạch từng giọt, Vẹn tròn sức khỏe."</p>
+          <div class="tags"><span class="t tb">TVC</span><span class="t tg">Script Writing</span><span class="t tp">Creative Strategy</span></div>
+          <div class="pmedia" style="margin-top:12px"><div class="pmi"><video src="13.mp4" controls style="width:100%;aspect-ratio:16/9;display:block"></video></div></div>
+        </div>
+      </div>
+
+      <!-- FM STYLE -->
+      <div class="pc f d2">
+        <div class="pth"><img src="17.jpg" alt="FM Style" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="pthph" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><p>17.jpg</p></div></div>
+        <div class="pb">
+          <div class="ppr">T1/2025 — T5/2025</div>
+          <div class="pnm">Slay the trend, save the spend</div>
+          <div class="pcl">FM Style · Multi-platform Campaign</div>
+          <p class="pdesc">Triển khai campaign trên TikTok, Facebook, Instagram nhắm đến nhóm yêu thích thời trang tiết kiệm nhưng stylish.</p>
+          <div class="tags"><span class="t tb">Campaign</span><span class="t tr">TikTok</span><span class="t tg">Facebook</span><span class="t tp">Instagram</span></div>
+          <div class="pmedia g3" style="margin-top:12px">
+            <div class="pmi"><img src="14.png" alt="" onclick="olb('14.png')" style="cursor:pointer" onerror="this.parentNode.style.background='var(--c1)'"></div>
+            <div class="pmi"><img src="15.png" alt="" onclick="olb('15.png')" style="cursor:pointer" onerror="this.parentNode.style.background='var(--c1)'"></div>
+            <div class="pmi"><img src="16.png" alt="" onclick="olb('16.png')" style="cursor:pointer" onerror="this.parentNode.style.background='var(--c1)'"></div>
+          </div>
+          <div class="pmedia g3" style="margin-top:7px">
+            <div class="pmi"><img src="18.png" alt="" onclick="olb('18.png')" style="cursor:pointer" onerror="this.parentNode.style.background='var(--c1)'"></div>
+            <div class="pmi"><img src="19.png" alt="" onclick="olb('19.png')" style="cursor:pointer" onerror="this.parentNode.style.background='var(--c1)'"></div>
+            <div class="pmi"><img src="21.png" alt="" onclick="olb('21.png')" style="cursor:pointer" onerror="this.parentNode.style.background='var(--c1)'"></div>
+          </div>
+          <div class="pmedia" style="margin-top:7px"><div class="pmi"><video src="20.mp4" controls style="width:100%;aspect-ratio:16/9;display:block"></video></div></div>
+        </div>
+      </div>
+
+      <!-- LÀ NÔM -->
+      <div class="pc f d3">
+        <div class="pth"><img src="22.JPG" alt="Là Nôm" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="pthph" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><p>22.JPG</p></div></div>
+        <div class="pb">
+          <div class="ppr">2025 — 2026</div>
+          <div class="pnm">Bộ nhận diện & Quà Tết 2026</div>
+          <div class="pcl">Thương hiệu Là Nôm · Brand Identity</div>
+          <p class="pdesc">Thiết kế bộ nhận diện thương hiệu và bộ quà tết 2026 cho Là Nôm — truyền tải giá trị truyền thống Việt qua ngôn ngữ thiết kế hiện đại.</p>
+          <div class="tags"><span class="t tg">Brand Identity</span><span class="t tp">Design</span><span class="t tr">Packaging</span></div>
+          <div class="pmedia g3" style="margin-top:12px">
+            <div class="pmi"><img src="22.JPG" alt="" onclick="olb('22.JPG')" style="cursor:pointer" onerror="this.parentNode.style.background='var(--c1)'"></div>
+            <div class="pmi"><img src="23.png" alt="" onclick="olb('23.png')" style="cursor:pointer" onerror="this.parentNode.style.background='var(--c1)'"></div>
+            <div class="pmi"><img src="25.png" alt="" onclick="olb('25.png')" style="cursor:pointer" onerror="this.parentNode.style.background='var(--c1)'"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PENORY -->
+      <div class="pc f d4">
+        <div class="pth"><img src="26.png" alt="Penory" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="pthph" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><p>26.png</p></div></div>
+        <div class="pb">
+          <div class="ppr">2025 — 2026</div>
+          <div class="pnm">Vận hành sàn Thương mại Penory</div>
+          <div class="pcl">Penory · E-commerce · Văn phòng phẩm</div>
+          <p class="pdesc">Vận hành bán văn phòng phẩm trên Facebook, Shopee, Instagram — chạy Ads, quản lý sàn và sản xuất video sản phẩm.</p>
+          <div class="tags"><span class="t tb">E-commerce</span><span class="t tg">Shopee</span><span class="t tp">Facebook Ads</span></div>
+          <div class="pmedia g2" style="margin-top:12px">
+            <div class="pmi"><img src="26.png" alt="" onclick="olb('26.png')" style="cursor:pointer" onerror="this.parentNode.style.background='var(--c1)'"></div>
+            <div class="pmi"><img src="27.png" alt="" onclick="olb('27.png')" style="cursor:pointer" onerror="this.parentNode.style.background='var(--c1)'"></div>
+          </div>
+          <div class="pmedia" style="margin-top:7px"><div class="pmi"><video src="28.mp4" controls style="width:100%;aspect-ratio:16/9;display:block"></video></div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ TVC FEATURED ══ -->
+<section id="tvc">
+  <div class="w">
+    <div class="ey f">Video nổi bật</div>
+    <h2 class="f d1">TVC <span class="aw" style="color:var(--c4)">Quảng cáo NOOM</span></h2>
+    <div class="tvcl">
+      <div class="tvvw f d2"><video src="13.mp4" controls style="width:100%;aspect-ratio:16/9;display:block"></video></div>
+      <div class="f d3">
+        <div class="tvb">🏆 Best of Marketing Mix</div>
+        <div class="tvt">TVC Dầu ép lạnh NOOM Foods 🌿</div>
+        <p class="tvd">Ý tưởng phát triển từ insight người tiêu dùng về xu hướng sống healthy. TVC truyền tải thông điệp "Sạch từng giọt, Vẹn tròn sức khỏe" tự nhiên và đầy cảm xúc.</p>
+        <div>
+          <div class="tvmr"><span class="tvml">Big Idea</span><span class="tvmv">Ngừa hơn chữa — Bảo vệ sức khỏe từ thực phẩm sạch</span></div>
+          <div class="tvmr"><span class="tvml">Vai trò</span><span class="tvmv">Creative Strategy + Script Writing</span></div>
+          <div class="tvmr"><span class="tvml">Kết quả</span><span class="tvmv">🏆 Best of Marketing Mix</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CASE STUDY ══ -->
+<section id="casestudy">
+  <div class="w">
+    <div class="ey f">Phân tích</div>
+    <h2 class="f d1">Case <span class="aw" style="color:var(--deep)">Study</span></h2>
+    <div class="csg">
+      <div class="csc f d2">
+        <div class="csh">
+          <div class="csn">Case Study 01</div>
+          <div class="cst">Phân tích Scandal của Pháo và Viruss dưới góc nhìn Marketing</div>
+        </div>
+        <div class="csb">
+          <p class="cstx">Phân tích chuyên sâu về cách một scandal lan truyền trên mạng xã hội ảnh hưởng đến hình ảnh thương hiệu cá nhân, chiến lược xử lý khủng hoảng và bài học marketing từ case thực tế. Bài viết áp dụng framework truyền thông khủng hoảng và phân tích hành vi người dùng trên các nền tảng digital.</p>
+          <a href="Pháo.pdf" class="csl" target="_blank">📄 Xem bài phân tích đầy đủ →</a>
+        </div>
+      </div>
+      <div class="csc f d3">
+        <div class="csh">
+          <div class="csn">Case Study 02</div>
+          <div class="cst">Phân tích vai trò nhà phân phối trong mô hình private labeling — kẹo Kera</div>
+        </div>
+        <div class="csb">
+          <p class="cstx">Phân tích mô hình private labeling qua tình huống thực tế kẹo Kera — làm rõ vai trò, lợi thế cạnh tranh và chiến lược phân phối trong bối cảnh thị trường Việt Nam. Ứng dụng mô hình Porter's Five Forces và phân tích chuỗi giá trị.</p>
+          <a href="Kera.pdf" class="csl" target="_blank">📄 Xem bài phân tích đầy đủ →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ RESEARCH ══ -->
+<section id="research">
+  <div class="w">
+    <div class="ey f">Nghiên cứu</div>
+    <h2 class="f d1">Bài báo <span class="aw" style="color:var(--deep)">Khoa học</span></h2>
+    <div class="resg">
+      <div class="resimg f d2">
+        <img src="29.png" alt="Bìa bài báo" onclick="olb('29.png')" onerror="this.style.display='none'">
+        <img src="30.png" alt="Mô hình nghiên cứu" onclick="olb('30.png')" onerror="this.style.display='none'">
+      </div>
+      <div class="f d3">
+        <h3 style="color:var(--deep);margin-bottom:13px;font-size:18px;line-height:1.5">Nghiên cứu Khoa học cấp Khoa Marketing</h3>
+        <p style="margin-bottom:12px">Bài nghiên cứu được trình bày tại <strong>Hội thảo Quốc tế MICA (2023–2024)</strong> và công bố trên <strong>Tạp chí Kinh tế và Kinh doanh Indonesia (JIEB)</strong>.</p>
+        <p style="margin-bottom:16px">Nghiên cứu phân tích hành vi người tiêu dùng và ứng dụng mô hình định lượng (Smart PLS) để đo lường các nhân tố tác động đến quyết định mua hàng.</p>
+        <div class="resdoi">DOI: 10.22146/jieb.v41i1.16782</div>
+        <br>
+        <a href="https://doi.org/10.22146/jieb.v41i1.16782" class="btn b-pri" target="_blank" style="margin-top:16px;display:inline-flex">🔗 Xem bài báo gốc</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ AWARDS ══ -->
+<section id="awards">
+  <div class="w">
+    <div class="ey f">Thành tích</div>
+    <h2 class="f d1">Giải thưởng & <span class="aw" style="color:var(--c4)">Vinh danh</span></h2>
+    <div class="awl">
+      <div class="awr f d1"><div class="awm">🥇</div><div><div class="awn">Cánh Chim Sáng Tạo 2024<span class="awo">Giải thưởng Cánh Chim Trắng — Đại học Đà Nẵng</span></div></div><span class="awy">2024</span></div>
+      <div class="awr f d2"><div class="awm">🥈</div><div><div class="awn">Nghiên cứu Khoa học cấp Khoa Marketing<span class="awo">Hội thảo Quốc tế MICA · Tạp chí JIEB Indonesia</span></div></div><span class="awy">2023–24</span></div>
+      <div class="awr f d2"><div class="awm">🏆</div><div><div class="awn">Best of Marketing Mix<span class="awo">Dự án TVC NOOM Foods</span></div></div><span class="awy">2025</span></div>
+      <div class="awr f d3"><div class="awm">🥈</div><div><div class="awn">Thanh niên Sáng tạo, Chuyển đổi số<span class="awo">Đoàn Thanh niên TP Đà Nẵng</span></div></div><span class="awy">2023</span></div>
+      <div class="awr f d3"><div class="awm">🥈</div><div><div class="awn">Học sinh giỏi Ngữ văn cấp Thành phố<span class="awo">Sở GD&ĐT Đà Nẵng</span></div></div><span class="awy">2022</span></div>
+      <div class="awr f d4"><div class="awm">🎖️</div><div><div class="awn">Giấy khen Xuất sắc — Ban Đối ngoại Startup Runway<span class="awo">Đoàn trường ĐH Kinh tế — ĐH Đà Nẵng</span></div></div><span class="awy">2024</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CERTS ══ -->
+<section id="certs">
+  <div class="w">
+    <div class="ey f">Chứng chỉ</div>
+    <h2 class="f d1">Certifications & <span class="aw" style="color:var(--deep)">Ngoại ngữ</span></h2>
+    <div class="ccg">
+      <div class="cc f d1"><div class="cbw"><div class="cbph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg></div></div><div><div class="ci">HubSpot Academy</div><div class="cn">Content Marketing Certification</div><div class="cyr">2024</div></div></div>
+      <div class="cc f d2"><div class="cbw"><div class="cbph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg></div></div><div><div class="ci">HubSpot Academy</div><div class="cn">Digital Marketing Certification</div><div class="cyr">2024</div></div></div>
+      <div class="cc toeic-c f d3"><div><div class="ci">TOEIC — IIG Vietnam</div><div class="cn">Tiếng Anh Quốc tế</div><div class="tscore">580 ✦</div></div></div>
+      <div class="cc f d4"><div><div class="ci">Microsoft Office</div><div class="cn">Tin học Văn phòng Nâng cao</div><div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:10px"><span class="t tb">Word</span><span class="t tg">Excel</span><span class="t tp">PowerPoint</span></div></div></div>
+    </div>
+
+    <h3 style="color:var(--deep);margin:36px 0 18px;font-size:17px">Giấy chứng nhận & Bằng khen</h3>
+    <div class="cgal">
+      <div class="cgali"><img src="31.jpg" alt="" onclick="olb('31.jpg')" onerror="this.parentNode.style.background='var(--c1)'"></div>
+      <div class="cgali"><img src="32.jpg" alt="" onclick="olb('32.jpg')" onerror="this.parentNode.style.background='var(--c1)'"></div>
+      <div class="cgali"><img src="33.jpg" alt="" onclick="olb('33.jpg')" onerror="this.parentNode.style.background='var(--c1)'"></div>
+      <div class="cgali"><img src="36.png" alt="" onclick="olb('36.png')" onerror="this.parentNode.style.background='var(--c1)'"></div>
+      <div class="cgali"><img src="37.png" alt="" onclick="olb('37.png')" onerror="this.parentNode.style.background='var(--c1)'"></div>
+      <a href="34.pdf" target="_blank" class="cgalp">📄<span>34.pdf</span></a>
+      <a href="35.pdf" target="_blank" class="cgalp">📄<span>35.pdf</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ EXTRACURRICULAR ══ -->
+<section id="extra">
+  <div class="w">
+    <div class="ey f">Hoạt động</div>
+    <h2 class="f d1">Ngoại khóa & <span class="aw" style="color:var(--deep)">Cộng đồng</span></h2>
+    <div class="extg">
+      <div class="extc f d2">
+        <div class="exto">Ban Tổ chức — Startup Runway</div>
+        <div class="extr">Thành viên Ban Đối ngoại</div>
+        <p style="font-size:13px;line-height:1.75;color:#475569">Đảm bảo tìm kiếm và duy trì tài trợ. Tìm kiếm và mời Ban giám khảo, Diễn giả, Đơn vị Hỗ trợ/Bảo trợ truyền thông, MC, Văn nghệ cho sự kiện. Đạt giấy khen <strong>Xuất sắc</strong> của Đoàn trường ĐH Kinh tế – ĐH Đà Nẵng.</p>
+        <div class="extgal">
+          <img src="38.jpg" alt="" onclick="olb('38.jpg')" onerror="this.style.background='var(--c1)'">
+          <img src="39.jpg" alt="" onclick="olb('39.jpg')" onerror="this.style.background='var(--c1)'">
+          <img src="40.jfif" alt="" onclick="olb('40.jfif')" onerror="this.style.background='var(--c1)'">
+        </div>
+      </div>
+      <div class="extc f d3">
+        <div class="exto">CLB Khởi nghiệp Kinh tế</div>
+        <div class="extr">Thành viên Ban Kinh doanh Đối ngoại</div>
+        <p style="font-size:13px;line-height:1.75;color:#475569">Đảm bảo tìm kiếm và duy trì tài trợ cho các hoạt động CLB. Xây dựng mối quan hệ với đối tác doanh nghiệp, tổ chức các sự kiện kết nối cộng đồng khởi nghiệp tại Đà Nẵng.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ══ -->
+<section id="contact">
+  <div class="w">
+    <div class="ctg">
+      <div>
+        <div class="ey f">Liên hệ</div>
+        <div class="ctbig f d1">Cùng nhau tạo ra điều thú vị nhỉ? 🚀</div>
+        <p class="ctsub f d2">Mình luôn sẵn sàng cho cơ hội mới — dù là dự án freelance, vị trí full-time hay chỉ một cuộc trò chuyện về marketing.</p>
+        <a href="mailto:tduong12112004@gmail.com" class="btn b-soft f d3">Gửi email cho mình ✉️</a>
+      </div>
+      <div class="f d2">
+        <div class="ctl">
+          <div class="cti"><div class="cticon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.22 1.18a2 2 0 012-2.18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 6.34a16 16 0 006.29 6.29l1.42-1.42a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div><div><div class="ctlbl">Điện thoại</div><div class="ctval">0934 751 211</div></div></div>
+          <div class="cti"><div class="cticon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><div class="ctlbl">Email</div><div class="ctval">tduong12112004@gmail.com</div></div></div>
+          <div class="cti"><div class="cticon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="ctlbl">Địa chỉ</div><div class="ctval">Hòa Vang, Đà Nẵng</div></div></div>
+          <div class="cti"><div class="cticon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><div><div class="ctlbl">Portfolio</div><div class="ctval">tduong12112004.github.io</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Nguyễn Thị Thùy Dương · All rights reserved</p>
+  <div class="fbrand">Thùy Dương ✦</div>
+</footer>
+
+<script>
+// Fade
+const fs=document.querySelectorAll('.f');
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('s')}),{threshold:.1});
+fs.forEach(el=>io.observe(el));
+// Skill bars
+const bars=document.querySelectorAll('.sbf');
+const bo=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.style.width=x.target.dataset.w;bo.unobserve(x.target)}})},{threshold:.3});
+bars.forEach(b=>bo.observe(b));
+// Nav active
+const secs=document.querySelectorAll('section[id]');
+const nls=document.querySelectorAll('.nav-ul a');
+const no=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){nls.forEach(l=>l.classList.remove('on'));const a=document.querySelector(`.nav-ul a[href="#${x.target.id}"]`);if(a)a.classList.add('on')}})},{threshold:.3});
+secs.forEach(s=>no.observe(s));
+// Video hover play
+document.querySelectorAll('.vt').forEach(t=>{const v=t.querySelector('video');if(!v)return;t.addEventListener('mouseenter',()=>v.play().catch(()=>{}));t.addEventListener('mouseleave',()=>{v.pause();v.currentTime=0})});
+// Lightbox
+function olb(s){document.getElementById('lbi').src=s;document.getElementById('lb').classList.add('on')}
+function clb(){document.getElementById('lb').classList.remove('on')}
+document.getElementById('lb').addEventListener('click',e=>{if(e.target===e.currentTarget)clb()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')clb()});
+</script>
+</body>
+</html>
